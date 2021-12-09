@@ -26,7 +26,7 @@
 
         <!-- hero -->
         <section class="hero flex-grow-1 d-flex flex-column justify-content-center align-items-center">
-            <h2 class="text-uppercase mb-4">Make a difference</h2>
+            <h1 class="text-uppercase mb-4">Make a difference</h1>
             <span class="mb-4">As long as poverty, injustice & inequality persist, none of us can truly rest </span>
             <div class="actions">
                 <a href="/" class="btn px-4 me-3">Our mission</a>
@@ -49,6 +49,7 @@ header {
     color: white;
     background-image: url('../assets/home-page-slider.jpg');
     background-position-x: center;
+    background-size: cover;
     height: 100vh;
     nav {
         padding: 1em 0;
