@@ -24,7 +24,18 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
 #app {
     font-family: 'Montserrat', sans-serif;
+    cursor: default;
 }
 </style>
