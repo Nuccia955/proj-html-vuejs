@@ -19,7 +19,7 @@
                     <a href="/">Journal</a>
                 </li>
                 <li>
-                    <a class="btn px-4" href="/">Donate</a>
+                    <a class="btn ms-btn gold" href="/">Donate</a>
                 </li>
             </ul>
         </nav>
@@ -29,8 +29,8 @@
             <h1 class="text-uppercase mb-4">Make a difference</h1>
             <span class="mb-4">As long as poverty, injustice & inequality persist, none of us can truly rest </span>
             <div class="actions">
-                <a href="/" class="btn px-4 me-3">Our mission</a>
-                <a href="/" class="btn px-4">Donate Now</a>
+                <a href="/" class="btn ms-btn me-3">Our mission</a>
+                <a href="/" class="btn ms-btn">Donate Now</a>
             </div>
         </section>
     </header>
@@ -66,32 +66,18 @@ header {
                     &:hover {
                         color: $goldenrod;
                     }
-                    &.btn {
-                        outline: none;
-                        font-size: 0.8em;
-                        border-radius: 0;
-                        background-color: $goldenrod;
-                        color: white;
-                        &:hover {
-                            background-color: #fcd66cd7;
-                        }
-                    }
                 }
             }
         }
     }
     .hero {
         a {
-            font-size: 0.8em;
-            text-transform: uppercase;
-            color: white;
             border: 2px solid currentColor;
-            border-radius: 0;
             &:hover {
                 color: $goldenrod;
             }
         }
-    }
+    } 
 }
 
 </style>
