@@ -17,27 +17,12 @@
                     </div>
 
                     <div class="statistics col-4 offset-1 d-flex flex-column justify-content-center align-items-center">
-                        <div class="data text-center mb-4">
-                            <div class="number">
-                                <i class="far fa-heart"></i>
-                                2032
-                            </div>
-                            <span>Volunteers worldwide</span>
-                        </div>
-                        <div class="data text-center mb-4">
-                            <div class="number">
-                                <i class="fas fa-globe"></i>
-                                132
-                            </div>
-                            <span>Active projects</span>
-                        </div>
-                        <div class="data text-center">
-                            <div class="number">
-                                <i class="fas fa-dollar-sign"></i>
-                                3.8M
-                            </div>
-                            <span>Donated</span>
-                        </div>
+                        <Data v-for="(data, index) in statistics"
+                            :key="`data-${index}`"
+                            :icon="data.icon"
+                            :number="data.number"
+                            :label="data.label"
+                        />
                     </div>
                 </div>
         </section>
@@ -67,18 +52,11 @@
                 position="center"
             />
             <div class="gallery d-flex justify-content-center">
-                <div class="picture mx-2">
-                    <img src="../assets/avada-charity-fair-trade-featured-400x300.jpg" alt="image">
-                </div>
-                <div class="picture mx-2">
-                    <img src="../assets/avada-charity-shelter-featured-400x300.jpg" alt="image">
-                </div>
-                <div class="picture mx-2">
-                    <img src="../assets/avada-charity-farming-featured-400x300.jpg" alt="image">
-                </div>
-                <div class="picture mx-2">
-                    <img src="../assets/avada-charity-vaccines-featured-400x300.jpg" alt="image">
-                </div>
+                <Picture v-for="(picture, index) in gallery"
+                    :key="`picture-${index}`"
+                    :img="picture.url"
+                    :alt="picture.alt"
+                />
             </div>
             <a href="/" class="text-uppercase">View all our causes</a>
         </section>
@@ -91,11 +69,16 @@
 <script>
 import SectionTitle from '@/components/SectionTitle.vue'
 import Card from '@/components/Card.vue'
+import Data from '@/components/Data.vue'
+import Picture from '@/components/Picture.vue'
+
 export default {
     name: 'Main',
     components: {
         SectionTitle,
         Card,
+        Data,
+        Picture,
     },
     data() {
         return {
@@ -121,8 +104,43 @@ export default {
                     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit iure nemo illum iusto quasi accusamus quis aspernatur distinctio',
                 },
             ],
+            statistics: [
+                {
+                    icon: 'far fa-heart',
+                    number: '2032',
+                    label: 'Volunteers worldwide'
+                },
+                {
+                    icon: 'fas fa-globe',
+                    number: '132',
+                    label: 'Active projects'
+                },
+                {
+                    icon: 'fas fa-dollar-sign',
+                    number: '3.8M',
+                    label: 'Donated'
+                },
+            ],
+            gallery: [
+                {
+                    url: 'avada-charity-fair-trade',
+                    alt: 'fair-trade'
+                },
+                {
+                    url: 'avada-charity-shelter',
+                    alt: 'shelter'
+                },
+                {
+                    url: 'avada-charity-farming',
+                    alt: 'farming'
+                },
+                {
+                    url: 'avada-charity-vaccines',
+                    alt: 'vaccines'
+                },
+            ],
         }
-    }
+    },
 }
 </script>
 
@@ -135,12 +153,6 @@ main {
             background-image: url('../assets/home-content-bg-1.jpg');
             background-size: cover;
             background-position: center;
-            .data {
-                color: white;
-                .number {
-                    font-size: 2em;
-                }
-            }
         }
     }
 
