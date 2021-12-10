@@ -35,7 +35,7 @@ img {
 }
 
 #app {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     cursor: default;
 }
 </style>
