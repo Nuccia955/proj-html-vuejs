@@ -44,41 +44,18 @@
 
         <!-- section project values -->
         <section class="project-values d-flex flex-column justify-content-center">
-            <!-- <div class="title text-center">
-                <h2 class="text-uppercase">Our values</h2>
-                <hr class="col-2 mx-auto">
-                <span>Think Big. Act Bigger</span>
-            </div> -->
             <SectionTitle
                 title="Our Values"
                 subtitle="Think Big. Act Bigger"
                 position="center"
             />
             <div class="values-list d-flex justify-content-center">
-                <div class="value text-center px-2">
-                    <i class="fas fa-tint mb-2"></i>
-                    <h5 class="mb-4">Clean Water</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit iure nemo illum iusto quasi accusamus quis aspernatur distinctio </p>
-                    <a href="/" class="btn ms-btn gold">Learn More</a>
-                </div>
-                <div class="value text-center px-2">
-                    <i class="fas fa-stethoscope mb-2"></i>
-                    <h5 class="mb-4">Vaccinations</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit iure nemo illum iusto quasi accusamus quis aspernatur distinctio </p>
-                    <a href="/" class="btn ms-btn gold">Learn More</a>
-                </div>
-                <div class="value text-center px-2">
-                    <i class="fas fa-graduation-cap mb-2"></i>
-                    <h5 class="mb-4">Education</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit iure nemo illum iusto quasi accusamus quis aspernatur distinctio </p>
-                    <a href="/" class="btn ms-btn gold">Learn More</a>
-                </div>
-                <div class="value text-center px-2">
-                    <i class="fab fa-pagelines mb-2"></i>
-                    <h5 class="mb-4">Farming</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit iure nemo illum iusto quasi accusamus quis aspernatur distinctio </p>
-                    <a href="/" class="btn ms-btn gold">Learn More</a>
-                </div>
+                <Card v-for="(value, index) in values" 
+                    :key="`value-${index}`"
+                    :icon="value.icon"
+                    :title="value.title"
+                    :text="value.text"
+                />
             </div>
         </section>
 
@@ -113,10 +90,38 @@
 
 <script>
 import SectionTitle from '@/components/SectionTitle.vue'
+import Card from '@/components/Card.vue'
 export default {
     name: 'Main',
     components: {
-        SectionTitle
+        SectionTitle,
+        Card,
+    },
+    data() {
+        return {
+            values: [
+                {
+                    icon: 'fas fa-tint',
+                    title: 'Clean Water',
+                    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit iure nemo illum iusto quasi accusamus quis aspernatur distinctio',
+                },
+                {
+                    icon: 'fas fa-stethoscope',
+                    title: 'Vaccinations',
+                    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit iure nemo illum iusto quasi accusamus quis aspernatur distinctio',
+                },
+                {
+                    icon: 'fas fa-graduation-cap',
+                    title: 'Education',
+                    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit iure nemo illum iusto quasi accusamus quis aspernatur distinctio',
+                },
+                {
+                    icon: 'fab fa-pagelines',
+                    title: 'Farming',
+                    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est impedit iure nemo illum iusto quasi accusamus quis aspernatur distinctio',
+                },
+            ],
+        }
     }
 }
 </script>
@@ -126,11 +131,6 @@ export default {
 
 main {
     .project-statistics {
-        hr {
-            color: $goldenrod;
-            opacity: 1;
-            border: 2px solid;
-        }
         .statistics {
             background-image: url('../assets/home-content-bg-1.jpg');
             background-size: cover;
@@ -150,35 +150,13 @@ main {
         background-size: cover;
         background-position: center;
         color: white;
-        hr {
-            opacity: 1;
-            border: 2px solid $goldenrod;
-        }
         .values-list {
             max-width: 80%;
             margin: 6em auto;
-            .value {
-                i {
-                    color: $goldenrod;
-                    font-size: 2.5em;
-                }
-                p {
-                    font-size: 0.8em;
-                    font-weight: 300;
-                    line-height: 2.5em;
-                }
-            }
         }
     }
 
     .causes-gallery {
-        .title {
-            margin-top: 6em;
-            hr {
-                opacity: 1;
-                border: 2px solid $goldenrod;
-            }
-        }
         .gallery {
             padding: 5em 0 6em;
             max-width: 80%;
