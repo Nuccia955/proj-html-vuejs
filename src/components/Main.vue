@@ -75,8 +75,30 @@
                 </div>
             </div>
         </section>
-        <!-- section recent causes gallery -->
 
+        <!-- section recent causes gallery -->
+        <section class="causes-gallery text-center">
+            <div class="title">
+                <h2 class="text-uppercase">Recent Causes</h2>
+                <hr class="col-2 mx-auto">
+                <span>We run projects in over 30 countries in 5 continents</span>
+            </div>
+            <div class="gallery d-flex justify-content-center">
+                <div class="picture mx-2">
+                    <img src="../assets/avada-charity-fair-trade-featured-400x300.jpg" alt="image">
+                </div>
+                <div class="picture mx-2">
+                    <img src="../assets/avada-charity-shelter-featured-400x300.jpg" alt="image">
+                </div>
+                <div class="picture mx-2">
+                    <img src="../assets/avada-charity-farming-featured-400x300.jpg" alt="image">
+                </div>
+                <div class="picture mx-2">
+                    <img src="../assets/avada-charity-vaccines-featured-400x300.jpg" alt="image">
+                </div>
+            </div>
+            <a href="/" class="text-uppercase">View all our causes</a>
+        </section>
         <!-- section articles -->
 
         <!-- section participation -->
@@ -137,8 +159,8 @@ main {
             border: 2px solid $goldenrod;
         }
         .values-list {
-            margin-top: 6em;
-            padding: 0 7em;
+            max-width: 80%;
+            margin: 6em auto;
             .value {
                 i {
                     color: $goldenrod;
@@ -151,12 +173,44 @@ main {
                 }
                 a {
                     color: white;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-size: 0.8em;
+                    font-weight: 300;
                     background-color: $goldenrod;
                     border-radius: 0;
                     &:hover {
                         background-color: #fcd66cd7;
                     }
                 }
+            }
+        }
+    }
+
+    .causes-gallery {
+        .title {
+            margin-top: 6em;
+            hr {
+                opacity: 1;
+                border: 2px solid $goldenrod;
+            }
+        }
+        .gallery {
+            padding: 5em 0 6em;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        a {
+            display: inline-block;
+            width: 100%;
+            padding: 3em;
+            background-color: $burnt-sienna;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-weight: 300;
+            &:hover {
+                background-color: #e0635d;
             }
         }
     }
