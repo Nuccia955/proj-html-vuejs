@@ -7,16 +7,19 @@
         />
         <div class="contents d-flex py-4">
             <Article 
-                :img="articles[4].urlCover"
+                :img="articles[activeIndex].urlCover"
                 :title="articles[activeIndex].title"
                 :text="articles[activeIndex].text"
             />
             <ul class="article-list overflow-auto">
                 <ArticlePreview v-for="(article, index) in articles"
                     :key="`article-${index}`"
+                    :index="index"
+                    :class="{active : activeIndex === index}"
                     :cover="article.urlPreview"
                     :title="article.title"
                     :text="article.subtitle"
+                    @getIndex="showArticleActive"
                 />
             </ul>
         </div>
@@ -80,6 +83,11 @@ export default {
             ],
             activeIndex: 0,
         }
+    },
+    methods: {
+        showArticleActive(index) {
+            this.activeIndex = index;
+        }
     }
 }
 </script>
@@ -96,6 +104,9 @@ export default {
             max-height: 100%;
             padding: 0;
             overflow-y: auto;
+            .active {
+                border: 2px solid $goldenrod;
+            }
         }
     }
 }

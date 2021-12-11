@@ -1,5 +1,7 @@
 <template>
-    <li class="article d-flex">
+    <li class="article d-flex"
+        @click="getIndex"
+    >
         <div class="cover w-25">
             <img :src="require(`../assets/${cover}.jpg`)" alt="article cover">
         </div>
@@ -17,6 +19,12 @@ export default {
         cover: String,
         title: String,
         text: String,
+        index: Number,
+    },
+    methods: {
+        getIndex() {
+            this.$emit('getIndex', this.index)
+        }
     }
 }
 </script>
@@ -27,6 +35,7 @@ export default {
     max-height: 96px;
     overflow-y: hidden;
     margin-bottom: 20px;
+    border: 2px solid transparent;
     .cover {
         margin-right: 20px;
     }

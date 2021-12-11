@@ -4,7 +4,7 @@
             <img :src="require(`../assets/${img}.jpg`)" alt="article cover">
         </div>
         <div class="text">
-            <h6 class="title">{{ title }}</h6>
+            <h4 class="title">{{ title }}</h4>
             <p>{{ text }}</p>
         </div>
     </div>
