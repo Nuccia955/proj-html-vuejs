@@ -88,7 +88,19 @@
                 </ul>
             </div>
         </section>
+
         <!-- section participation -->
+        <section class="join-us py-5 mt-5">
+            <SectionTitle class="w-50 mx-auto mt-5"
+                title="Change a life today"
+                subtitle="As long as poverty, injustice & inequality persist, none of us can truly rest. It doesn't take much to change a life. get in touch today and start making the difference."
+                position="center"
+            />
+            <div class="actions text-center mt-5">
+                <a href="/" class="btn ms-btn me-3">Volunteer</a>
+                <a href="/" class="btn ms-btn">Donate Now</a>
+            </div>
+        </section>
     </main>
 </template>
 
@@ -267,6 +279,17 @@ main {
                 padding: 0;
                 overflow-y: auto;
             }
+        }
+    }
+
+    .join-us {
+        min-height: 450px;
+        color: white;
+        background-image: url('../assets/home-footer.jpg');
+        background-position: center;
+        background-size: cover;
+        a.ms-btn {
+            border: 2px solid currentColor;
         }
     }
 }
