@@ -48,12 +48,6 @@ img {
         text-transform: uppercase;
         border-radius: 0;
         outline: none;
-        &.gold {
-            background-color: $goldenrod;
-            &:hover {
-                background-color: #fcd66cd7;
-            }
-        }
     }
     p {
       word-spacing: 2px;

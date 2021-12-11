@@ -20,7 +20,9 @@
                         <a href="/">Journal</a>
                     </li>
                     <li>
-                        <a class="btn ms-btn gold" href="/">Donate</a>
+                        <BtnFilled
+                            text="Donate" 
+                        />
                     </li>
                 </ul>
             </div>
@@ -44,10 +46,12 @@
 
 <script>
 import BtnBordered from '@/components/BtnBordered.vue'
+import BtnFilled from '@/components/BtnFilled.vue'
 export default {
     name: 'Header',
     components: {
         BtnBordered,
+        BtnFilled,
     }
 }
 </script>
@@ -56,6 +60,10 @@ export default {
 @import "../../styles/colors.scss";
 
 header {
+    h1 {
+        letter-spacing: 3px;
+        font-weight: 300;
+    }
     color: white;
     background-image: url('../assets/home-page-slider.jpg');
     background-position-x: center;
@@ -83,5 +91,4 @@ header {
         }
     }
 }
-
 </style>

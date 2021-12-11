@@ -1,5 +1,6 @@
 <template>
     <footer>
+        <JoinUs />
         <!-- logo -->
         <div class="logo text-center py-4">
             <img class="col-2 display-block" src="../assets/avada-charity-mobile-logo-retina.png" alt="logo">
@@ -14,27 +15,20 @@
             </span>
 
         <!-- external contacts links -->
-            <div class="external-contacts mt-3">
-                <a @click.prevent class="social-btn" href="/">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a @click.prevent class="social-btn" href="/">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a @click.prevent class="social-btn" href="/">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a @click.prevent class="social-btn" href="/">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </div>
+            <Social />
         </div>
     </footer>
 </template>
 
 <script>
+import JoinUs from '@/components/JoinUs.vue'
+import Social from '@/components/Social.vue'
 export default {
     name: 'Footer',
+    components: {
+        JoinUs,
+        Social,
+    }
 }
 </script>
 
@@ -48,27 +42,5 @@ export default {
         font-family: 'Montserrat', sans-serif;
         letter-spacing: 2px;
     }
-    .external-contacts {
-        a.social-btn {
-            margin-right: 10px;
-            padding: 5px 12px;
-            display: inline-block;
-            border-radius: 50%;
-            background-color: white;
-            color: $goldenrod;
-            font-size: 1.5em;
-            &:last-child {
-                margin-right: 0;
-            }
-            i {
-                width: 25px;
-                height: 25px
-            }
-            &:hover {
-                transform: scale(1.2);
-            }
-        }
-    }
 }
-
 </style>

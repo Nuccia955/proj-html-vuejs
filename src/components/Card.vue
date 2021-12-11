@@ -3,18 +3,24 @@
         <i :class="`${icon}`" class="mb-2"></i>
         <h5 class="mb-4">{{ title }}</h5>
         <p>{{ text }}</p>
-        <a href="/" class="btn ms-btn gold">Learn More</a>
+        <BtnFilled 
+            text="Learn More"
+        />
     </div>
 </template>
 
 <script>
+import BtnFilled from '@/components/BtnFilled.vue'
 export default {
     name: 'Card',
+    components: { 
+      BtnFilled, 
+    },
     props: {
         icon: String,
         title: String,
         text: String,
-    }
+    },
 }
 </script>
 
