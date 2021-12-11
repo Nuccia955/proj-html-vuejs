@@ -46,7 +46,7 @@
 
         <!-- section recent causes gallery -->
         <section class="causes-gallery text-center">
-            <SectionTitle
+            <SectionTitle class="mt-5"
                 title="Recent Causes"
                 subtitle="We run projects in over 30 countries in 5 continents"
                 position="center"
@@ -60,8 +60,34 @@
             </div>
             <a href="/" class="text-uppercase">View all our causes</a>
         </section>
-        <!-- section articles -->
 
+        <!-- section articles -->
+        <section class="articles">
+            <SectionTitle class="section-title mt-5"
+                title="Latest Articles"
+                subtitle="Together we all make the difference"
+                position="center"
+            />
+            <div class="contents d-flex py-4">
+                <div class="active">
+                    <div class="cover">
+                        <img src="../assets/photo-1444213007800-cff19e1677ac-600x450.jpg" alt="image">
+                    </div>
+                    <div class="text">
+                        <h6 class="title">Title</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa sapiente adipisci illo nostrum, nam possimus necessitatibus? Nostrum animi laboriosam doloribus, quaerat aliquam repudiandae quidem ut deleniti! Natus nostrum accusantium maxime.</p>
+                    </div>
+                </div>
+                <ul class="article-list overflow-auto">
+                    <ArticlePreview v-for="(article, index) in articles"
+                        :key="`article-${index}`"
+                        :cover="article.url"
+                        :title="article.title"
+                        :text="article.subtitle"
+                    />
+                </ul>
+            </div>
+        </section>
         <!-- section participation -->
     </main>
 </template>
@@ -71,6 +97,7 @@ import SectionTitle from '@/components/SectionTitle.vue'
 import Card from '@/components/Card.vue'
 import Data from '@/components/Data.vue'
 import Picture from '@/components/Picture.vue'
+import ArticlePreview from '@/components/ArticlePreview.vue'
 
 export default {
     name: 'Main',
@@ -79,6 +106,7 @@ export default {
         Card,
         Data,
         Picture,
+        ArticlePreview,
     },
     data() {
         return {
@@ -139,6 +167,32 @@ export default {
                     alt: 'vaccines'
                 },
             ],
+            articles: [
+                {
+                    url: 'photo-1444664597500-035db93e2323',
+                    title: 'The human story of uniqueness ',
+                    subtitle: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure fugiat eaque veritatis inventore quisquam',
+                    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure fugiat eaque veritatis inventore quisquam et odio architecto eligendi obcaecati ab eveniet laboriosam dicta vero, ex quam aut aliquid. Reprehenderit!',
+                },
+                {
+                    url: 'photo-1447430617419-95715602278e',
+                    title: 'Sustainable trade tactics',
+                    subtitle: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure fugiat eaque veritatis inventore quisquam',
+                    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure fugiat eaque veritatis inventore quisquam et odio architecto eligendi obcaecati ab eveniet laboriosam dicta vero, ex quam aut aliquid. Reprehenderit!',
+                },
+                {
+                    url: 'photo-1460230525622-630fe3294cd7',
+                    title: 'Farmers making a difference',
+                    subtitle: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure fugiat eaque veritatis inventore quisquam',
+                    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure fugiat eaque veritatis inventore quisquam et odio architecto eligendi obcaecati ab eveniet laboriosam dicta vero, ex quam aut aliquid. Reprehenderit!',
+                },
+                {
+                    url: 'photo-1460600421604-5e138c208b9c',
+                    title: 'Meeting remotes tribes in Peru',
+                    subtitle: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure fugiat eaque veritatis inventore quisquam',
+                    text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro iure fugiat eaque veritatis inventore quisquam et odio architecto eligendi obcaecati ab eveniet laboriosam dicta vero, ex quam aut aliquid. Reprehenderit!',
+                },
+            ]
         }
     },
 }
@@ -185,6 +239,33 @@ main {
             font-weight: 300;
             &:hover {
                 background-color: #e0635d;
+            }
+        }
+    }
+
+    .articles {
+        width: 70%;
+        margin: 0 auto;
+        .contents {
+            max-height: 650px;
+            .active {
+                border: 1px solid lightgray;
+                .text {
+                    padding: 15px 15px;
+                    .title {
+                        color: $goldenrod;
+                    }
+                }
+            }
+            .active {
+                margin-right: 20px;
+            }
+            .article-list,
+            .active {
+                width: calc(50% - 20px);
+                max-height: 100%;
+                padding: 0;
+                overflow-y: auto;
             }
         }
     }
