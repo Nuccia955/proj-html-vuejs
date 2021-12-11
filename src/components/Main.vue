@@ -58,7 +58,9 @@
                     :alt="picture.alt"
                 />
             </div>
-            <a href="/" class="text-uppercase">View all our causes</a>
+            <BtnExpandContent class="py-5"
+                text="View all our causes"
+            />
         </section>
 
         <!-- section articles -->
@@ -87,6 +89,9 @@
                     />
                 </ul>
             </div>
+            <BtnExpandContent class="py-3"
+                text="View all our articles"
+            />
         </section>
 
         <!-- section participation -->
@@ -97,8 +102,12 @@
                 position="center"
             />
             <div class="actions text-center mt-5">
-                <a href="/" class="btn ms-btn me-3">Volunteer</a>
-                <a href="/" class="btn ms-btn">Donate Now</a>
+                <BtnBordered class="me-3"
+                    text="Volunteer"
+                />
+                <BtnBordered 
+                    text="Donate Now"
+                />
             </div>
         </section>
     </main>
@@ -106,6 +115,8 @@
 
 <script>
 import SectionTitle from '@/components/SectionTitle.vue'
+import BtnExpandContent from '@/components/BtnExpandContent.vue'
+import BtnBordered from '@/components/BtnBordered.vue'
 import Card from '@/components/Card.vue'
 import Data from '@/components/Data.vue'
 import Picture from '@/components/Picture.vue'
@@ -119,6 +130,8 @@ export default {
         Data,
         Picture,
         ArticlePreview,
+        BtnExpandContent,
+        BtnBordered,
     },
     data() {
         return {
@@ -239,19 +252,6 @@ main {
             padding: 5em 0 6em;
             max-width: 80%;
             margin: 0 auto;
-        }
-        a {
-            display: inline-block;
-            width: 100%;
-            padding: 3em;
-            background-color: $burnt-sienna;
-            color: white;
-            text-decoration: none;
-            letter-spacing: 3px;
-            font-weight: 300;
-            &:hover {
-                background-color: #e0635d;
-            }
         }
     }
 

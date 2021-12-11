@@ -15,16 +15,16 @@
 
         <!-- external contacts links -->
             <div class="external-contacts mt-3">
-                <a class="social-btn" href="/">
+                <a @click.prevent class="social-btn" href="/">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a class="social-btn" href="/">
+                <a @click.prevent class="social-btn" href="/">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a class="social-btn" href="/">
+                <a @click.prevent class="social-btn" href="/">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a class="social-btn" href="/">
+                <a @click.prevent class="social-btn" href="/">
                     <i class="fab fa-youtube"></i>
                 </a>
             </div>
@@ -63,6 +63,9 @@ export default {
             i {
                 width: 25px;
                 height: 25px
+            }
+            &:hover {
+                transform: scale(1.2);
             }
         }
     }
