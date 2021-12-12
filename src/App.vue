@@ -1,10 +1,16 @@
 <template>
     <div id="app">
-        <Header />
+        <Header 
+            :status="status"
+        />
 
-        <Main />
+        <Main 
+            @hideMore="changeContent"
+        />
 
-        <Footer />
+        <Footer 
+        
+        />
     </div>
 </template>
 
@@ -19,6 +25,16 @@ export default {
       Header,
       Main,
       Footer,
+    },
+    data() {
+      return {
+        status: true,
+      }
+    },
+    methods: {
+        changeContent(status) {
+            this.status = status
+        }
     }
 }
 </script>

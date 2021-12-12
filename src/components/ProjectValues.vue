@@ -1,6 +1,6 @@
 <template>
     <section class="project-values d-flex flex-column justify-content-center">
-            <SectionTitle
+            <SectionTitle class="mt-5"
                 title="Our Values"
                 subtitle="Think Big. Act Bigger"
                 position="center"

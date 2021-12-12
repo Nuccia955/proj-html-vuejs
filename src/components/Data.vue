@@ -1,5 +1,5 @@
 <template>
-    <div class="data text-center mb-4">
+    <div class="data text-center mb-4" id="mission">
         <div class="number">
             <i :class="`${icon}`"></i>
             {{ number }}
@@ -15,7 +15,7 @@ export default {
         icon: String,
         number: String,
         label: String,
-    }
+    },
 }
 </script>
 

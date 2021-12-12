@@ -1,5 +1,5 @@
 <template>
-    <section class="causes-gallery text-center">
+    <section class="causes-gallery text-center" id="causes">
         <SectionTitle class="mt-5"
             title="Recent Causes"
             subtitle="We run projects in over 30 countries in 5 continents"

@@ -17,4 +17,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.picture:hover {
+    transform: scale(1.5);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
 </style>

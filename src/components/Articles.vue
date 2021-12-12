@@ -1,5 +1,5 @@
 <template>
-    <section class="articles">
+    <section class="articles" id="journal">
         <SectionTitle class="section-title mt-5"
             title="Latest Articles"
             subtitle="Together we all make the difference"
@@ -87,7 +87,7 @@ export default {
     methods: {
         showArticleActive(index) {
             this.activeIndex = index;
-        }
+        },
     }
 }
 </script>
