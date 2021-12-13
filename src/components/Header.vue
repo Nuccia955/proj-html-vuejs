@@ -80,6 +80,7 @@ header {
     nav {
         background-color: rgba(0, 0, 0, 0.4);
         padding: 1em 0;
+        z-index: 10;
         .links {
             list-style: none;
             li {

@@ -38,6 +38,13 @@ export default {
     border: 2px solid transparent;
     .cover {
         margin-right: 20px;
+        &:hover {
+            cursor: pointer;
+            img {
+                z-index: 2;
+                transform: scale(1.2);
+            }
+        }
     }
     .text .title {
         color: $goldenrod;

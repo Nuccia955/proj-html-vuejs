@@ -9,7 +9,8 @@
             <Picture v-for="(picture, index) in gallery"
                 :key="`picture-${index}`"
                 :img="picture.url"
-                :alt="picture.alt"
+                :alt="picture.title"
+                :text="picture.title"
             />
         </div>
         <BtnExpandContent class="py-5"
@@ -34,19 +35,19 @@ export default {
             gallery: [
                 {
                     url: 'avada-charity-fair-trade',
-                    alt: 'fair-trade'
+                    title: 'fair trade'
                 },
                 {
                     url: 'avada-charity-shelter',
-                    alt: 'shelter'
+                    title: 'shelter'
                 },
                 {
                     url: 'avada-charity-farming',
-                    alt: 'farming'
+                    title: 'farming'
                 },
                 {
                     url: 'avada-charity-vaccines',
-                    alt: 'vaccines'
+                    title: 'vaccines'
                 },
             ],
         }
